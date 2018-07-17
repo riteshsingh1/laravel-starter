@@ -12,4 +12,13 @@ class UsersController extends Controller
         $users = User::all();
         return view('admin.users.index', compact('users'));
     }
+
+    /**
+     * Edit user
+     */
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.users.edit', compact('user'));
+    }
 }

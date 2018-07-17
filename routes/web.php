@@ -20,4 +20,7 @@ Route::get('/inactive', 'Auth\RegisterController@inactive')->name('inactive');
 Route::get('/resend', 'Auth\RegisterController@resendEmail')->name('resendEmail');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users', 'UsersController@index')->name('users');
+Route::get('/users/{id}', 'UsersController@edit')->name('users.edit');
+Route::post('/users/{id}', 'UsersController@update')->name('users.edit');
+Route::get('/users/{id}/delete', 'UsersController@delete')->name('users.delete');
 Route::get('/user/activate/{token}', 'Auth\AuthController@signupActivate');

@@ -25,6 +25,7 @@ Users
                   <th>Name</th>
                   <th>Email</th>
                   <th>Role</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -34,6 +35,10 @@ Users
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->role }}</td>
+                <td>
+                    <a href="{{ route('users.edit',$user->id) }}"><i class="fa fa-edit"></i></a>
+                    <a href="{{ route('users.delete',$user->id) }}"><i class="fa fa-trash"></i></a>
+                </td>
                 </tr>
                @endforeach 
               </tbody>
