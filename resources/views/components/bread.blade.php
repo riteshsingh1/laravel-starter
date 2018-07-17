@@ -1,6 +1,6 @@
 <div class="app-title">
     <div>
-    <h1><i class="fa fa-dashboard"></i> {{ $title }}</h1>
+    <h1><i class="fa fa-{{ $icon ?? 'dashboard' }}"></i> {{ $title }}</h1>
     <p>{{ $subtitle ?? '' }}</p>
     </div>
     <ul class="app-breadcrumb breadcrumb">
