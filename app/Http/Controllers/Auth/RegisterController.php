@@ -85,7 +85,10 @@ class RegisterController extends Controller
     public function resendEmail()
     {
         $user = User::find(auth()->id());
+        $user->activation_token = str_random(60);
+        $user->save();
         $user->notify(new ConfirmYourAccount($user));
+        
         return redirect('inactive')->with('success', 'Mail sent successfully');
     }
 }

@@ -113,6 +113,9 @@ class AuthController extends Controller
         $user->active = true;
         $user->activation_token = '';
         $user->save();
-        return $user;
+        if (request()->wantsJson()) {
+            return $user;
+        }
+        return redirect('/home');
     }
 }
