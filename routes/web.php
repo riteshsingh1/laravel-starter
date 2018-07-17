@@ -19,4 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users', 'UsersController@index')->name('users');
-Route::get('/user/activate/{token}', 'Auth/AuthController@signupActivate');
+Route::get('/user/activate/{token}', 'Auth\AuthController@signupActivate');
