@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Notifications\ConfirmYourAccount;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -38,7 +39,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest')->except('inactive', 'resendEmail');
     }
 
     /**
@@ -74,5 +75,17 @@ class RegisterController extends Controller
         $user->notify(new ConfirmYourAccount($user));
 
         return $user;
+    }
+
+    public function inactive()
+    {
+        return view('auth.activate');
+    }
+
+    public function resendEmail()
+    {
+        $user = User::find(auth()->id());
+        $user->notify(new ConfirmYourAccount($user));
+        return redirect('inactive')->with('success', 'Mail sent successfully');
     }
 }
