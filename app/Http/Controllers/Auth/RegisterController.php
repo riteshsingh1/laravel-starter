@@ -77,6 +77,10 @@ class RegisterController extends Controller
         return $user;
     }
 
+    /**
+     * Return to inactive view
+     * @return view
+     */
     public function inactive()
     {
         return view('auth.activate');
