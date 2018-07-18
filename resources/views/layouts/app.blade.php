@@ -26,7 +26,19 @@
    <script src="{{ asset('admin/js/main.js') }}"></script>
     <!-- The javascript plugin to display page loading on top-->
    <script src="{{ asset('admin/js/plugins/pace.min.js') }}"></script>
-    <!-- Page specific javascripts-->
+   <script type="text/javascript" src="{{ asset('admin/js/plugins/bootstrap-notify.min.js') }}"></script>
+   @if(Session::has('success'))
+    <script>
+    	$.notify({
+      		title: "Success : ",
+      		message: "{{ session('success') }}",
+      		icon: 'fa fa-check' 
+      	},{
+      		type: "info"
+      	});
+    </script>
+   @endif
+   <!-- Page specific javascripts-->
     @yield('scripts')
   </body>
 </html>

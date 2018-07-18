@@ -24,6 +24,8 @@ Users
                   <th>#</th>
                   <th>Name</th>
                   <th>Email</th>
+                  <th>gender</th>
+                  <th>Image</th>
                   <th>Role</th>
                   <th>Actions</th>
                 </tr>
@@ -34,6 +36,8 @@ Users
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
+                <td>{{ $user->gender }}</td>
+                <td><img src="{{ $user->getFirstMediaUrl('avatars', 'thumb') }}"></td>
                 <td>{{ $user->role }}</td>
                 <td>
                     <a href="{{ route('users.edit',$user->id) }}"><i class="fa fa-edit"></i></a>

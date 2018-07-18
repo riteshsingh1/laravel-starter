@@ -116,6 +116,6 @@ class AuthController extends Controller
         if (request()->wantsJson()) {
             return $user;
         }
-        return redirect('/home');
+        return redirect('/home')->with('success','Accounted activated successfully');
     }
 }

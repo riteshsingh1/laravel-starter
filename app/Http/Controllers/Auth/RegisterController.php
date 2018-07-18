@@ -71,7 +71,9 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'activation_token' => str_random(60)
         ]);
-
+        if (isset($data['avatar'])) {
+            $user->addMediaFromRequest('avatar')->toMediaCollection('avatars');
+        }    
         $user->notify(new ConfirmYourAccount($user));
 
         return $user;
