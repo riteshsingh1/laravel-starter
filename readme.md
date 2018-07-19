@@ -6,10 +6,12 @@ This consists of following features :
 
 * Based on bootstrap 4
 * Auth Scaffolding
+* Email Verification on registration
 * Integrated admin panel tempelate
+* Noty for notifications on frontend
 * Passport Setup for api auth
 * VueX setup
-
+* MediaLibrary (Spatie/MediaLibrary) for image and video uploads
 
 ## Steps to install
 
