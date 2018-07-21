@@ -27,6 +27,7 @@
       <div class="form-group btn-container">
         <button class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>SIGN IN</button>
       </div>
+      <p class="semibold-text mb-2"><a href="{{ route('register') }}">Don't have an account ?</a></p>
     </form>
     <form class="forget-form" action="index.html">
       <h3 class="login-head"><i class="fa fa-lg fa-fw fa-lock"></i>Forgot Password ?</h3>

@@ -7,7 +7,7 @@ This consists of following features :
 * Based on bootstrap 4
 * Auth Scaffolding
 * Email Verification on registration
-* Integrated admin panel tempelate
+* Integrated admin panel template
 * Noty for notifications on frontend
 * Passport Setup for api auth
 * VueX setup
@@ -16,7 +16,9 @@ This consists of following features :
 ## Steps to install
 
 1. clone this repository:
-
+```
+git clone https://github.com/riteshsingh1/laravel-starter.git
+```
 2. copy .env.example to .env
 ```
 cp .env.example .env
@@ -29,7 +31,6 @@ composer install
 ```
 php artisan key:generate
 ```
-
 5. create database and update in .env
 
 6. run migrations
@@ -40,4 +41,8 @@ php artisan migrate
 ```
 php artisan passport:install
 ```
-8. run in broswer and enjoy !!!
+8. For File Uploads
+```
+ php artisan storage:link
+```
+9. run in broswer and enjoy !!!
