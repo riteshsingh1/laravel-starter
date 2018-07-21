@@ -17,7 +17,7 @@
     <section class="material-half-bg">
       <div class="cover"></div>
     </section>
-    <section class="login-content">
+    <section class="login-content" id="app">
       <div class="logo">
         <h1>{{ config('app.name') }}</h1>
       </div>
